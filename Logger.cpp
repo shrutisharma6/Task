@@ -1,12 +1,13 @@
 #include "Logger.h"
 #include <iostream>
+#include <fstream>
 
-Logger::Logger(std::string str) {
-    v.push_back(str);
-}
-
-void Logger::displayLog() {
-    for (const auto& val : v) {
-        std::cout << val << std::endl;
-    }
+Logger::Logger(string str) {
+    ofstream fout;
+    fout.open("logger.txt", ios::app);
+    time_t rawtime;
+    time (&rawtime);
+    fout<< str;
+    fout<<ctime (&rawtime);
+    fout.close();
 }

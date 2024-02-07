@@ -1,6 +1,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 #include "Product.h"
+#include "Logger.h"
 #include <bits/stdc++.h>
 class Inventory {
 private:

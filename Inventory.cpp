@@ -1,9 +1,12 @@
 #include "inventory.h"
 #include "Logger.cpp"
-
-void Inventory::addProduct(  Product& product) {
+#include "FileHandler.cpp"
+void Inventory::addProduct( Product& product) {
     products.push_back(product);
-    Logger lobj("Product added to inventory");
+    string temp = "Product inserted at ";
+    Logger lobj(temp);
+    FileHandler fobj;
+    fobj.setProductsInFile(product);
 }
 void Inventory::updateProduct(int productId,string name, float price, int quantity) {
     for(auto& product : products) {
@@ -11,7 +14,7 @@ void Inventory::updateProduct(int productId,string name, float price, int quanti
             product.setProductName(name);
             product.setProductPrice(price);
             product.setProductStock(quantity);
-            Logger lobj("Product details updated");
+            Logger lobj("Product details updated at ");
             break;
         }
     }
@@ -23,7 +26,7 @@ void Inventory::displayInventory()   {
     else {
         for(auto product:products){
             product.displayDetails();
-            Logger lobj("Product details fetched");
+            Logger lobj("Product details fetched at");
         }
     }
 }
