@@ -64,6 +64,7 @@ int main() {
                 cout <<"Invalid choice"<<endl;break;
         }
     } while(x !=5);
+    cout<<"Thank you";
     
     return 0;
 }
