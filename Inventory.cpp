@@ -18,6 +18,9 @@ void Inventory::updateProduct(int productId,string name, float price, int quanti
             break;
         }
     }
+    FileHandler fobj;
+    fobj.updateProductsInFile(products);
+
 }
 void Inventory::displayInventory()   {
     if (products.empty()) {

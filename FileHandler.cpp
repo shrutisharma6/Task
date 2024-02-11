@@ -29,3 +29,20 @@ void FileHandler::getProductsFromFile() {
     }
 }
 
+void FileHandler::updateProductsInFile(vector<Product>products){
+    ofstream fout("product.txt");
+    for(auto& product : products) {
+        if (fout.is_open()) {
+        fout << product.getProductId() << ","
+             << product.getProductName() << ","
+             << product.getUnitPrice() << ","
+             << product.getStock() << endl;
+    } 
+    else {
+        cerr << "Error opening file." << endl;
+    }
+    }
+    fout.close();
+    cout<<"Product details updated"<<endl;
+}
+

@@ -7,4 +7,5 @@ class FileHandler {
         FileHandler(){}
         void setProductsInFile(Product product);
         void getProductsFromFile();
+        void updateProductsInFile(vector<Product>products);
 };

@@ -1,4 +1,1 @@
-Id,Name,Price,Quantity
-2,sampoo,50,10
-1,sopa,20,10
-1,soap,20,40
+1,edited,30,12
